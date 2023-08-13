@@ -1,0 +1,45 @@
+*{
+ box-sizing: border-box;
+}
+
+body{
+ margin: 0;
+ padding: 0;
+ background-color: rgb(157, 0, 255);
+ width: 100vw;
+ height: 100vh;
+ display: flex;
+ align-items: center;
+}
+
+#container{
+ width: 50%;
+ /* background-color: brown; */
+ margin: auto;
+ text-align: center;
+ display: flex;
+ flex-direction: column;
+ gap: 0.5rem;
+ color: white;
+}
+#container h3{
+ text-align: left;
+}
+
+#container textarea{
+ width: 100%;
+}
+
+#choices {
+    text-align: left;
+}
+
+#choices span{
+ background-color: white;
+ padding: 10px 10px;
+ border-radius: 30px;
+ margin: 0.2rem;
+ display: inline-block;
+ margin-left: 0;
+ color: black;
+}
