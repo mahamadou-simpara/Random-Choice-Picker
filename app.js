@@ -24,21 +24,41 @@ function createTags(e) {
   }
 
   if (e.key === "Enter") {
+    const times = 30;
 
-   const randomSpan = randomSpanPick();
+    const interval = setInterval(() => {
+      const randomSpan = randomSpanPick();
+      console.log(randomSpan);
 
-   console.log(randomSpan);
+      highLightSpan(randomSpan);
 
+      setTimeout(() => {
+        unHighLightSpan(randomSpan);
+      }, 100);
+    }, 100);
+
+    setTimeout(() => {
+        clearInterval(interval);
+        const randomSpan = randomSpanPick();
+        highLightSpan(randomSpan);
+       },100 * times);
   }
 }
 
 textareaEl.addEventListener("keyup", createTags);
 
-function randomSpanPick(){
-    const spans = document.querySelectorAll('span');
+function randomSpanPick() {
+  const spans = document.querySelectorAll("span");
 
-    return spans[Math.floor(Math.random() * 3)];
+  return spans[Math.floor(Math.random() * spans.length)];
 
-    // console.log(spans[Math.floor(Math.random * 3)]);
+  // console.log(spans[Math.floor(Math.random * 3)]);
 }
 
+function highLightSpan(span) {
+  span.classList.add("highLight");
+}
+
+function unHighLightSpan(span) {
+  span.classList.remove("highLight");
+}
